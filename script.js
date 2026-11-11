@@ -1,6 +1,14 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Meta Pixel: count a Lead when someone taps Join Now.
+// The link opens in a new tab, so the page stays alive and the event has time to send.
+document.getElementById("join").addEventListener("click", function () {
+  if (typeof fbq === "function") {
+    fbq("track", "Lead");
+  }
+});
+
 // Floating gold sparks
 (function () {
   const canvas = document.getElementById("sparks");
