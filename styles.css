@@ -48,33 +48,32 @@ body {
   text-align: center;
 }
 
-/* Avatar */
-.avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  box-shadow: 0 0 34px rgba(233, 180, 76, 0.4), 0 0 80px rgba(40, 180, 70, 0.25);
-  animation: float 5s ease-in-out infinite;
-}
-.avatar img { width: 100%; height: 100%; border-radius: 50%; display: block; object-fit: cover; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* Title */
+/* Title: small TEAM above big MAFIA */
 .title {
-  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Cinzel", serif;
   font-weight: 700;
-  font-size: clamp(2.6rem, 11vw, 3.4rem);
-  letter-spacing: 0.1em;
+  line-height: 1;
+}
+.title .team {
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+  letter-spacing: 0.5em;
+  padding-left: 0.5em; /* balances the trailing letter-spacing so it stays centered */
+  color: #e9e2dc;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+}
+.title .name {
+  margin-top: 10px;
+  font-size: clamp(3.6rem, 18vw, 5.4rem);
+  letter-spacing: 0.08em;
+  padding-left: 0.08em;
   background: linear-gradient(180deg, var(--gold-soft), var(--gold) 55%, #b8862b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 30px rgba(233, 180, 76, 0.25);
+  filter: drop-shadow(0 0 24px rgba(233, 180, 76, 0.3));
 }
 
 .tagline {
@@ -174,8 +173,6 @@ footer {
 
 /* Phones */
 @media (max-width: 520px) {
-  .avatar { width: min(230px, 62vw); height: min(230px, 62vw); }
-  .title { margin-top: 20px; }
   .tagline { font-size: 1.02rem; }
   .cta { margin-top: 26px; padding: 20px 24px; font-size: 1.2rem; }
   .tiles { gap: 8px; margin-top: 28px; }
@@ -191,5 +188,5 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .avatar, .cta { animation: none; }
+  .cta { animation: none; }
 }
