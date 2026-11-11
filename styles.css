@@ -21,7 +21,6 @@ body {
     radial-gradient(ellipse 80% 60% at 50% 0%, #2b0d14 0%, transparent 65%),
     radial-gradient(ellipse 70% 50% at 50% 100%, #1b0a0e 0%, transparent 70%),
     var(--bg);
-  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -39,10 +38,13 @@ body {
   z-index: 1;
   max-width: 440px;
   margin: 0 auto;
-  padding: 56px 20px 40px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 40px 18px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -170,9 +172,22 @@ footer {
   color: #6d625c;
 }
 
-@media (max-width: 380px) {
-  .tiles { gap: 8px; }
-  .tile p { font-size: 0.68rem; }
+/* Phones */
+@media (max-width: 520px) {
+  .avatar { width: min(230px, 62vw); height: min(230px, 62vw); }
+  .title { margin-top: 20px; }
+  .tagline { font-size: 1.02rem; }
+  .cta { margin-top: 26px; padding: 20px 24px; font-size: 1.2rem; }
+  .tiles { gap: 8px; margin-top: 28px; }
+  .tile { padding: 14px 6px 12px; }
+  .tile h2 { font-size: 0.78rem; letter-spacing: 0.1em; }
+  .tile p { font-size: 0.8rem; }
+  .note { font-size: 0.78rem; }
+}
+
+@media (max-width: 360px) {
+  .tile h2 { font-size: 0.7rem; letter-spacing: 0.06em; }
+  .tile p { font-size: 0.74rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
